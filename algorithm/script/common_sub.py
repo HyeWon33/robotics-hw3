@@ -8,12 +8,11 @@ def callback(msg):
 
 def service_callback(request):
     response = Notify_multiple_of_10Response(ten = "Multiplier of ten")
-    print "request data : ", request.a, request.b, request.c, ", response : ", response.ten
+    print("request data : {}, {}, {} response : {}".format(request.a, request.b, request.c, response.ten))
     return response
 
 rospy.init_node('common_subscriber')
 sub = rospy.Subscriber('common_msg', common_msg, callback)
 service = rospy.Service('Notify_10', Notify_multiple_of_10, service_callback)
-
 rospy.spin()
 
