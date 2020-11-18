@@ -16,7 +16,7 @@ while not rospy.is_shutdown():
     if count % 10.0 == 0.0:
         req = Notify_multiple_of_10Request(a=count, b=count, c=count)
         res = requester(req)
-        print "request data : ", req.a, req.b, req.c, ", response : ", res.ten
+        print("request data : {}, {}, {} , resaponse : {}".format(req.a,  req.b, req.c, res.ten))
     count += 1.0
     msg.data = count
     msg.point = Point(x = count, y = count, z = count)
