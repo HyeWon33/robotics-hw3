@@ -8,7 +8,7 @@ def callback(msg):
 
 def service_callback(request):
     response = Notify_multiple_of_10Response(ten = "Multiplier of ten")
-    print("request data : {}, {}, {} response : {}".format(request.a, request.b, request.c, response.ten))
+    print("request data : {}, {}, {} , response : {}".format(request.a, request.b, request.c, response.ten))
     return response
 
 rospy.init_node('common_subscriber')
